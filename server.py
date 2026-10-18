@@ -447,10 +447,8 @@ class AppState:
             for full_url, cid in trade_links:
                 if cid in seen:
                     continue
-                cname = cat_names.get(cid, f"Раздел {cid}")
-                if "dota 2" in cname.lower():
-                    continue
                 seen.add(cid)
+                cname = cat_names.get(cid, f"Раздел {cid}")
                 old = existing_map.get(cid, {})
                 new_cats.append({
                     "id": cid,
@@ -474,8 +472,6 @@ class AppState:
                 pr = re.search(r'<div class="tc-price"[^>]*>\s*<div>([^<]+)<span class="unit">([^<]+)</span>', linner)
                 stock_val = amt.group(1).strip().replace(" ", "") if amt else "∞"
                 ltitle = html.unescape(desc.group(1).strip()) if desc else f"Лот {lid}"
-                if "жетон" in ltitle.lower():
-                    continue
                 parsed_lots.append({
                     "id": lid,
                     "title": ltitle,
@@ -494,7 +490,7 @@ class AppState:
         title = order_obj.get("title", "").lower()
         if re.search(r"\b202[0-5]\b", d):
             return False
-        if "dota 2" in cat or "жетон" in title or "карточки" in title:
+        if "карточки" in title:
             return False
         return True
 
