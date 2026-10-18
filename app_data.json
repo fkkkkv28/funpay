@@ -2,7 +2,7 @@
   "golden_key": "",
   "telegram": {
     "bot_token": "",
-    "chat_id": "",
+    "chat_id": "1531060673",
     "notify_new_order": true,
     "notify_order_closed": true,
     "notify_bumps": true
@@ -103,14 +103,43 @@
     "H81ATARL": "Закрыт",
     "XHFU9GVS": "Закрыт",
     "AMGXV5BM": "Закрыт",
-    "B5S27QN6": "Закрыт"
+    "B5S27QN6": "Закрыт",
+    "VQYLJ8WU": "Закрыт",
+    "QJ17W8Y8": "Закрыт",
+    "GUCJWNQP": "Оплачен"
   },
   "cached_orders": [
+    {
+      "id": "GUCJWNQP",
+      "cls": "info",
+      "date": "сегодня, 20:02",
+      "ago": "8 минут назад",
+      "title": "Европа, 💜[АВТОВЫДАЧА] Европа | 21 Ранг | Без привязок | С почтой Firstmail💜, Любая платформа, Почта привязана, Любой, Стартовый, AR 21",
+      "cat": "Genshin Impact, Аккаунты",
+      "buyer": "Hotaj",
+      "status": "Оплачен",
+      "price": 69.0,
+      "unit": "₽",
+      "url": "https://funpay.com/orders/GUCJWNQP/"
+    },
+    {
+      "id": "VQYLJ8WU",
+      "cls": "",
+      "date": "сегодня, 15:14",
+      "ago": "5 часов назад",
+      "title": "(PC) Forza Horizon 4, 🔥🏁【FORZA HORIZON 4 + 9 ИГР В ПОДАРОК】⚡ АВТОВЫДАЧА 24/7 БЕЗ GUARD 💎 ВХОД БЕЗ КОДОВ 🔥, Продажа",
+      "cat": "Forza Horizon, Аккаунты",
+      "buyer": "RILEY3213",
+      "status": "Закрыт",
+      "price": 25.0,
+      "unit": "₽",
+      "url": "https://funpay.com/orders/VQYLJ8WU/"
+    },
     {
       "id": "B4TXQYT5",
       "cls": "info",
       "date": "сегодня, 0:04",
-      "ago": "11 часов назад",
+      "ago": "20 часов назад",
       "title": "🔥❄️【THE LONG DARK + 9 ИГР В ПОДАРОК】⚡ АВТОВЫДАЧА 24/7 БЕЗ GUARD 💎 БЕЗ ОЧЕРЕДЕЙ 🔥, PC",
       "cat": "The Long Dark, Аккаунты",
       "buyer": "erstenkaiser",
@@ -123,7 +152,7 @@
       "id": "L51V83BW",
       "cls": "",
       "date": "вчера, 23:03",
-      "ago": "12 часов назад",
+      "ago": "21 час назад",
       "title": "Европа, 💜[АВТОВЫДАЧА] Европа | 21 Ранг | Без привязок | С почтой Firstmail💜, Любая платформа, Почта привязана, Любой, Стартовый, AR 21",
       "cat": "Genshin Impact, Аккаунты",
       "buyer": "dnbdemg",
@@ -136,7 +165,7 @@
       "id": "RHKHFE1S",
       "cls": "",
       "date": "вчера, 3:22",
-      "ago": "день назад",
+      "ago": "2 дня назад",
       "title": "Европа, 💜[АВТОВЫДАЧА] Европа | 21 Ранг | Без привязок | С почтой Firstmail💜, Любая платформа, Почта привязана, Любой, Стартовый, AR 21",
       "cat": "Genshin Impact, Аккаунты",
       "buyer": "lonny46",
@@ -149,7 +178,7 @@
       "id": "TYQW6JTS",
       "cls": "",
       "date": "16 октября, 23:12",
-      "ago": "день назад",
+      "ago": "2 дня назад",
       "title": "Европа, 💜[АВТОВЫДАЧА] Европа | 21 Ранг | Без привязок | С почтой Firstmail💜, Любая платформа, Почта привязана, Любой, Стартовый, AR 21",
       "cat": "Genshin Impact, Аккаунты",
       "buyer": "Dima28837",
@@ -162,7 +191,7 @@
       "id": "T8CBH967",
       "cls": "",
       "date": "13 октября, 0:50",
-      "ago": "5 дней назад",
+      "ago": "6 дней назад",
       "title": "Европа, 💜[АВТОВЫДАЧА] Европа | 21 Ранг | Без привязок | С почтой Firstmail💜, Любая платформа, Почта привязана, Любой, Стартовый, AR 21",
       "cat": "Genshin Impact, Аккаунты",
       "buyer": "Polina567800118866",
@@ -185,5 +214,5 @@
       "url": "https://funpay.com/orders/TV33QSTH/"
     }
   ],
-  "cached_balance": "279 ₽"
+  "cached_balance": "305 ₽"
 }
