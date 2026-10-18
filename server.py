@@ -124,6 +124,8 @@ class AppState:
         self.active_lots = []
         self.orders = self.data.get("cached_orders", [])
         self.tg_last_update_id = 0
+        self.start_ts = time.time()
+        self.relay_dispatched = False
 
         self._init_cookie_opener()
 
@@ -992,6 +994,32 @@ def background_worker():
                     urllib.request.urlopen(f"{ext_url.rstrip('/')}/api/state", timeout=8).read()
                 except Exception:
                     pass
+
+            # Автоматическая бесшовная эстафета 24/7 (GitHub Actions)
+            # Через 3.5 часа непрерывной работы инициируем запуск следующего воркфлоу,
+            # чтобы он бесшовно принял работу до истечения таймера текущего сервера.
+            gh_token = os.environ.get("AUTO_DISPATCH_TOKEN")
+            gh_repo = os.environ.get("GITHUB_REPOSITORY", "fkkkkv28/funpay")
+            if gh_token and not getattr(STATE, "relay_dispatched", False):
+                uptime = now - getattr(STATE, "start_ts", now)
+                if uptime >= 12600:  # 3.5 часа работы
+                    STATE.relay_dispatched = True
+                    try:
+                        STATE.log("🔄 Передача эстафеты 24/7: инициируем запуск следующего облачного сервера...")
+                        disp_url = f"https://api.github.com/repos/{gh_repo}/actions/workflows/autobump.yml/dispatches"
+                        req_disp = urllib.request.Request(
+                            disp_url,
+                            data=json.dumps({"ref": "main"}).encode("utf-8"),
+                            headers={
+                                "Authorization": f"Bearer {gh_token}",
+                                "Accept": "application/vnd.github+json",
+                                "User-Agent": "AEGIS-Relay-Bot"
+                            }
+                        )
+                        urllib.request.urlopen(req_disp, timeout=15)
+                        STATE.log("✅ Эстафета успешно передана! Новый облачный сервер запущен.")
+                    except Exception as e:
+                        STATE.log(f"Предупреждение при передаче эстафеты: {e}")
 
             # Smart Auto-Bump: проверяем каждые 15 секунд, не подошел ли срок поднятия у ЛЮБОГО раздела
             if cfg.get("auto_bump", True) and (now - last_category_check_ts >= 15):
